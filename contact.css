@@ -1,0 +1,633 @@
+/* -- ----------------- -- */
+/* -- [ ACCESSIBILITY ] -- */
+/* -- ----------------- -- */
+
+@import url("//cdn.cengage.com/libs/font-awesome/4.0.3/css/font-awesome.min.css");
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,600,700);
+body :before, 
+body :after {
+  display: inline-block;
+  text-rendering: optimizeLegibility !important;
+  -moz-osx-font-smoothing: grayscale;
+   -webkit-font-smoothing: antialiased !important;
+  font-family: FontAwesome;
+  font-weight: normal;
+  webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+}
+
+/* -- ENDECA -- */
+
+.endeca-slot { display: block; }
+
+/* -- Text Shadow IE Fix -- */ 
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { 
+  *, *:before, *:after { text-shadow: none !important; }
+}
+
+/* -- ------------------- --------------- */
+/* -- Basic layout styles --------------- */
+/* -- ------------------- --------------- */
+
+html { height: 100%; }
+
+html body { 
+  background-color: #FFF;
+  height: 100%;
+  min-height: 100%; 
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  -webkit-text-size-adjust: 100%;
+  webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+     -ms-box-sizing: border-box;
+      -o-box-sizing: border-box;
+         box-sizing: border-box;
+}
+
+html body, button  {
+  color: #000;
+  font: 400 14px/1 'Open Sans', Arial, Helvetica, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+   -webkit-font-smoothing: antialiased !important;
+  text-rendering: optimizeLegibility !important;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
+button { 
+  border: 0;
+  cursor: pointer;
+}
+
+input::-moz-focus-inner,
+button::-moz-focus-inner { 
+    border: 0;
+    padding: 0;
+}
+
+@media (max-width: 480px)  {  }
+
+/* -- ------------- -- */
+/* -- [ Container ] -- */
+/* -- ------------- -- */ 
+
+.container {
+  height: auto;
+  position: relative;
+  margin: 0 auto;
+  max-width: 1180px;
+  z-index: 1;
+}
+
+@media (max-width: 1200px) { .container { padding: 0 20px; } }
+
+/* -- --------------------- -- */
+/* -- [ COLLAPSE FUNCTION ] -- */
+/* -- --------------------- -- */ 
+
+body .container .collapse {
+  height: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.ie8 .container .collapse { height: auto; }
+
+body .container .collapsing { 
+  overflow: hidden; 
+  -webkit-transition: height 0.35s ease;
+     -moz-transition: height 0.35s ease;
+      -ms-transition: height 0.35s ease;
+       -o-transition: height 0.35s ease;
+          transition: height 0.35s ease;
+}
+
+body .collapse.in { height: auto; }
+
+/* -- ---------- -- */
+/* -- [ Header ] -- */
+/* -- ---------- -- */
+
+
+html body { margin-top: 120px !important }
+@media (max-width: 768px) { html body { margin-top: 119px !important } } 
+@media (max-width: 480px) { html body { margin-top: 99px !important } }   
+@media (max-width: 325px) { html body { margin-top: 81px !important } }
+
+html body header {
+  -webkit-box-shadow: none !important;
+     -moz-box-shadow: none !important;
+          box-shadow: none !important;
+}
+html body header:after {
+  content:none !important;
+}
+
+html body header h1 button[data-target="#home"] {  
+  color: transparent;
+  background: url("images/MindTap-logo.svg") center 19px no-repeat;
+  height: 70px;
+  margin: 0 0 0 12px;
+  padding: 0;
+  position: relative;
+  width: 156px;
+  float: left;
+}
+
+html body header h1 button[data-target="#home"]:before {
+  content: " ";
+  border: 1px solid #CCC;
+  border-width: 0 0 0 1px;
+  height: 40px;
+  margin: auto 0;
+  position: absolute;
+  left: -8px;
+  top: 0;
+  bottom: 0;
+}
+
+@media (max-width: 480px)  {  
+  html body header h1 button[data-target="#home"] {
+    height: 54px !important;
+    background-position: center 13px;
+    margin-left: 5px;
+    width: 140px;
+  } 
+
+  html body header h1 button[data-target="#home"]:before {
+    height: 30px;
+    left: -5px;
+  } 
+}
+
+
+/* -- [ Nav Bar ] -- */
+
+html body #navigation-bar { background-color: ; }
+
+html body ul#nav-bar-links {
+  float: none;
+  position: initial;
+}
+
+ul#nav-bar-links li button {
+  color: ;
+  font-weight: 600;
+  display: inline-block;
+  padding: 0 9px;
+  text-decoration: none;
+  -webkit-transition: all .15s ease-in-out;
+     -moz-transition: all .15s ease-in-out;
+      -ms-transition: all .15s ease-in-out;
+       -o-transition: all .15s ease-in-out;
+          transition: all .15s ease-in-out;
+}
+
+ul#nav-bar-links li button:hover  { 
+  background: #008BCB;
+  color: #FFF;
+}
+
+#nav-bar-links button[data-target="#home"],
+#nav-bar-links button[data-target="#home"]:hover { 
+  color: transparent !important;
+  overflow: hidden;
+  position: relative;
+  width: 44px;
+}
+
+#nav-bar-links button[data-target="#home"]:after { 
+  content: "\f015";
+  color: #333;
+  font-size: 28px;
+  position: absolute;
+  left: 9px;
+  top: 0;
+}
+
+#nav-bar-links button[data-target="#home"]:hover:after { color: #FFF; }
+
+@media (min-width: 768px) { 
+  html body a.header-btn { 
+    position: absolute;
+    top: -50px;
+  } 
+
+  #nav-bar-links ul.container {
+    margin: 0 auto;
+    padding-left: 47px;
+  }
+
+  html body button.header-btn:not(.collapsed),
+  html body button.header-btn:not(.collapsed):hover { background: #FFF; }
+
+  ul#nav-bar-links li button {
+    font-size: 14px;
+    height: 36px;
+    line-height: 36px;
+  }
+  
+}
+
+@media (max-width: 768px) { 
+
+  button.home-btn { 
+    color: #333;
+    right: 35px; 
+  }
+
+  button.home-btn:before {
+    font-size: 26px;
+    content: "\f015";
+  }
+
+  html body button#header-sign-in-btn {
+    border: 0;
+    border-bottom: 1px solid #fff;
+  }
+
+  ul#nav-bar-links li:first-child { display: none; }
+
+  html body ul#nav-bar-links li {
+    height: auto !important;
+    border-bottom: 1px solid #FFF;
+  }
+
+  ul#nav-bar-links li button {
+    background-color: #dddcca;;
+    height: 46px;
+    padding-left: 15px;
+    text-align: left;
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 325px)  {  
+  body.catalog-title #navigation-bar {
+    top: 63px !important;
+  }
+}
+
+/* -- PRODUCT INFO BAR -- */
+
+html body nav#product-info-bar {
+  top: 70px;
+}
+
+body.header-shadow #product-info-bar.scroll-drop-shadow:after { content:""; }
+ 
+@media (max-width: 768px) { html body nav#product-info-bar {top: ; } } 
+@media (max-width: 480px) { 
+  html body nav#product-info-bar {
+    height: 44px;
+    line-height: 42px;
+    top: 54px; 
+  }
+  #product-info-bar button[data-target="#product-info-content"] {
+    font-size: 15px;
+    line-height: 42px;
+    height: 100%;
+  }
+}   
+@media (max-width: 325px) { html body nav#product-info-bar {top: 63px; } }
+
+/* -- -------------------------------- -- */
+/* -- [ Product Info Panels All Size ] -- */
+/* -- -------------------------------- -- */
+
+body > .panel :before, 
+body > .panel :after {
+  display: inline-block;
+  text-rendering: optimizeLegibility !important;
+  -moz-osx-font-smoothing: grayscale;
+   -webkit-font-smoothing: antialiased !important;
+  font-family: FontAwesome;
+  font-weight: normal;
+  webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+}
+
+body > .panel {
+  border-top: 1px solid #CCC;
+  webkit-box-shadow: inset 0 5px 10px 0 rgba(0,0,0,.1);
+    -moz-box-shadow: inset 0 5px 10px 0 rgba(0,0,0,.1);
+     -ms-box-shadow: inset 0 5px 10px 0 rgba(0,0,0,.1);
+      -o-box-shadow: inset 0 5px 10px 0 rgba(0,0,0,.1);
+         box-shadow: inset 0 5px 10px 0 rgba(0,0,0,.1);
+  color: #3f3f3f;
+  padding: 25px 0 60px;
+  position: relative;
+}
+
+body > .panel .content-wrapper { 
+  padding: 0 6.75%;
+  margin: 0 auto;
+  position: relative;
+}
+
+@media (max-width: 768px) { 
+  body > .panel .content-wrapper { 
+    padding: 0;
+  }
+}
+
+body > .panel h1 {
+  color: #3f3f3f; 
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 30px;
+  margin-bottom: 24px;
+}
+
+body > .panel h2 {
+  color: #3F3F3F; 
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  margin-bottom: 10px;
+}
+
+body > .panel h3,
+body > .panel h4 {
+  color: #000;
+  font-size: 16px; 
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+body > .panel p.subtitle { 
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  margin: 0 0 10px;
+}
+
+body > .panel p { margin-bottom: 10px; }
+
+body > .panel p,
+body > .panel li,
+body > .panel q,
+body > .panel cite {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+
+body > .panel p:last-of-type,
+body > .panel li:last-of-type {
+  margin-bottom: 20px;
+}
+
+body > .panel dl {
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+body > .panel dt,
+body > .panel dd {
+  line-height: 24px;
+}
+body > .panel dt {
+  font-weight: 600;
+}
+
+body > .panel a, 
+:before, 
+:after {
+  -moz-osx-font-smoothing: grayscale;
+   -webkit-font-smoothing: antialiased !important;
+   text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
+body > .panel a, 
+body > .panel a:visited {
+  color: #007db8;
+  cursor:pointer;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+body > .panel a:hover,
+body > .panel a:focus { text-decoration: underline; }
+
+body > .panel .btn {
+  border-radius: 4px;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 20px auto 10px;
+  padding: 5px 0;
+  text-align: center;
+  width: 1020px;
+  max-width: calc(100% - 40px);
+  -webkit-transition: all .25s linear;
+     -moz-transition: all .25s linear;
+      -ms-transition: all .25s linear;
+       -o-transition: all .25s linear;
+          transition: all .25s linear;
+}
+
+body > .panel .btn { }
+
+body > .panel .double-arrow:after {
+  content: "\f101";
+  font-size: 21px;
+  margin-top: 1px;
+  padding-left: 4px;
+  position: absolute;
+  text-indent: 0;
+}
+
+body > .panel .double-arrow:hover:after {
+  padding-left: 6px;
+}
+
+@media (min-width: 481px) {
+  body > .panel dt {
+    float: left;
+    width: 90px;
+    overflow: hidden;
+    clear: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  body > .panel dd {
+    margin-left: 110px;
+  }
+}
+
+@media (max-width: 480px) {
+  body > .panel dd {
+    margin-left: 0;
+  }
+}
+
+
+hr.faded-divider {
+  background-image: -webkit-linear-gradient(left,rgba(204,204,204,.1),rgba(204,204,204,.8),rgba(204,204,204,.9),rgba(204,204,204,1),rgba(204,204,204,.9),rgba(204,204,204,.8),rgba(204,204,204,.1));
+     background-image: -moz-linear-gradient(left,rgba(204,204,204,.1),rgba(204,204,204,.8),rgba(204,204,204,.9),rgba(204,204,204,1),rgba(204,204,204,.9),rgba(204,204,204,.8),rgba(204,204,204,.1));
+      background-image: -ms-linear-gradient(left,rgba(204,204,204,.1),rgba(204,204,204,.8),rgba(204,204,204,.9),rgba(204,204,204,1),rgba(204,204,204,.9),rgba(204,204,204,.8),rgba(204,204,204,.1));
+       background-image: -o-linear-gradient(left,rgba(204,204,204,.1),rgba(204,204,204,.8),rgba(204,204,204,.9),rgba(204,204,204,1),rgba(204,204,204,.9),rgba(204,204,204,.8),rgba(204,204,204,.1));
+  border: 0;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.3);
+     -moz-box-shadow: 0 1px 3px 0 rgba(0,0,0,.3);
+      -ms-box-shadow: 0 1px 3px 0 rgba(0,0,0,.3);
+       -0-box-shadow: 0 1px 3px 0 rgba(0,0,0,.3);
+          box-shadow: 0 1px 3px 0 rgba(0,0,0,.3);
+  height: 1px;
+  margin: 10px 0 10px 0;
+  width: 100%;
+}
+
+.ie8 hr.faded-divider {
+  background: url('//cdn.cengage.com/images/apps/search/hr-faded.jpg');
+  height: 12px; 
+}
+
+hr.sub-panel-faded-divider {
+  background: -webkit-gradient(linear,left top,right top,color-stop(0%,rgba(255,255,255,0)),color-stop(25%,rgba(204,204,204,1)),color-stop(74%,rgba(204,204,204,1)),color-stop(100%,rgba(255,255,255,0)));
+  background: -webkit-linear-gradient(left,rgba(255,255,255,0)0%,rgba(204,204,204,1)25%,rgba(204,204,204,1)74%,rgba(255,255,255,0)100%);
+  background: -moz-linear-gradient(left,rgba(255,255,255,0)0%,rgba(204,204,204,1)25%,rgba(204,204,204,1)75%,rgba(255,255,255,0)100%);
+  background: linear-gradient(to right,rgba(255,255,255,0)0%,rgba(204,204,204,1)25%,rgba(204,204,204,1)74%,rgba(255,255,255,0)100%);
+  background: -ms-linear-gradient(left,rgba(255,255,255,0)0%,rgba(204,204,204,1)25%,rgba(204,204,204,1)74%,rgba(255,255,255,0)100%);
+  background: -o-linear-gradient(left,rgba(255,255,255,0)0%,rgba(204,204,204,1)25%,rgba(204,204,204,1)74%,rgba(255,255,255,0)100%);
+  border: 0;
+  height: 1px;
+  margin: 25px 0 42px;
+  width: 100%;
+}
+
+/* -- [ Bread Crumbs ] -- */
+
+#bread-crumbs {
+  margin-bottom: 8px;
+  padding-top: 6px;
+}
+
+#bread-crumbs li {
+  display: inline-block;
+  font-size: 11px;
+  line-height: normal;
+}
+
+#bread-crumbs li:before { 
+  color: #999;
+  content:"\f105";
+  font-size: 14px;
+  margin: 0 4px 0 2px;
+  vertical-align:-1px;
+}
+
+#bread-crumbs li:first-child:before { 
+  content: " ";
+  margin:0;
+}
+
+#bread-crumbs ul li:last-child:after { content: " "; } 
+
+@media (max-width: 768px) {
+
+  #bread-crumbs { display: none; }
+
+  #bread-crumbs ul { 
+    height: 10px;
+    visibility: hidden; 
+  } 
+}
+
+/* --- ------------ --- */
+/* --- [ SECTIONS ] --- */
+/* --- ------------ --- */
+
+body > .panel .row {
+  width: 100%;
+  margin-bottom: 38px;
+  margin-left: 10.75%;
+}
+
+body > .panel .column {
+  display: inline-block;
+  vertical-align: top;
+  width: 30%;
+  max-width: 300px;
+}
+
+body > .panel .column p:last-of-type {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) { 
+  body > .panel .row { margin-left: 0;}
+
+  body > .panel .column {
+    margin-left: 0;
+    width: 49.6%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) { 
+  .column {
+    width: 100%;
+  }
+}
+
+/* --- [ GENERAL INQUIRIES ] --- */
+
+#general ul.bullets {
+  list-style-type: disc;
+  margin-left: 110px;
+}
+
+@media (max-width: 480px) { 
+  #general ul.bullets {
+    margin-left: 0;
+  }
+}
+
+
+/* --- [ LOCATIONS ] --- */
+
+
+/* --- [ MY INVOICE ] --- */
+
+#invoice .invoice-collapse {
+  margin: 0 auto;
+  max-width: 758px;
+}
+
+#invoice .invoice-collapse .btn {
+  background: #FFF;
+  border: 1px solid #bfbfbf;
+  color: #007db8;
+  padding: 14px 0;
+  text-align: left;
+  text-indent: 15px;
+}
+
+#invoice .invoice-collapse .btn {
+  background: #FFF;
+  border: 1px solid #bfbfbf;
+  color: #007db8;
+  padding: 14px 0;
+  text-align: left;
+  text-indent: 15px;
+}
+
+
+/* --- [ REPORT PIRACY ] --- */
+
+
+/* -- Footer -- */
+
+
+
+
+
